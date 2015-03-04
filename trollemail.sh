@@ -1,9 +1,10 @@
 #!/bin/bash
 
 mensagem="@cos.ufrj.br"
-pagina=0
+paginas=100
 
-while [ $pagina -le 5 ]
+pagina=0
+while [ $pagina -le $paginas ]
 do
 
 if [ $pagina = 0  ]; then
@@ -14,5 +15,4 @@ lynx -dump "http://www.google.com/search?q="$mensagem"&start="$pagina"" >> troll
 fi
 
 pagina=$((pagina+10))
-echo $pagina
 done 

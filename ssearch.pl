@@ -1,14 +1,14 @@
 #!/usr/bin/perl
 #
-# Uso: ./ssearch.pl FILE_TO_SEARCH WORDLIST
+# Uso: ./ssearch.pl TROLLEMAIL WORDLIST
 #
 #
 
 use strict;
 
-open(SEARCHFILE,$ARGV[0]) || die("Can not open searchﬁle because $!");
+open(TROLLEMAIL,$ARGV[0]) || die("Can not open TROLLEMAIL because $!");
 
-open(WORDFILE,$ARGV[1]) || die("Can not open wordﬁle because $!");
+open(WORDFILE,$ARGV[1]) || die("Can not open WORDFILE because $!");
 
 
 my @WORDS = <WORDFILE>; 
@@ -17,7 +17,7 @@ close(WORDFILE);
 
 my $LineCount = 0;
 
-while(<SEARCHFILE>) {
+while(<TROLLEMAIL>) {
 	foreach my $word (@WORDS) {
 		chomp($word);
 		++$LineCount;
@@ -29,4 +29,4 @@ while(<SEARCHFILE>) {
 	}
 }
 
-close(SEARCHFILE);
+close(TROLLEMAIL);
